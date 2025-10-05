@@ -8,23 +8,23 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Primary - Teal/Turquoise (Hope, Education, Growth) */
-    --primary: 174 62% 47%;
+    /* Primary - Terracotta/Rust (Nepali earth, warmth) */
+    --primary: 15 70% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 174 62% 65%;
-    --primary-dark: 174 62% 35%;
+    --primary-light: 15 70% 65%;
+    --primary-dark: 15 70% 40%;
     
-    /* Accent - Warm Orange (Energy, Empowerment) */
-    --accent: 25 75% 55%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 25 75% 70%;
+    /* Accent - Saffron Gold (Cultural, spiritual) */
+    --accent: 40 90% 55%;
+    --accent-foreground: 25 20% 15%;
+    --accent-light: 40 90% 70%;
     
-    /* Secondary - Earthy Brown */
-    --secondary: 30 25% 45%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Warm Clay */
+    --secondary: 30 40% 60%;
+    --secondary-foreground: 25 20% 15%;
     
     /* Background - Warm Cream */
-    --background: 35 40% 98%;
+    --background: 35 45% 97%;
     --foreground: 25 20% 15%;
     
     /* Card */
@@ -42,7 +42,7 @@ All colors MUST be HSL.
     /* Border */
     --border: 35 20% 88%;
     --input: 35 20% 88%;
-    --ring: 174 62% 47%;
+    --ring: 15 70% 50%;
     
     /* Destructive */
     --destructive: 0 84% 60%;
@@ -52,15 +52,15 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Custom Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(174 62% 47%) 0%, hsl(174 62% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(25 75% 55%) 0%, hsl(25 75% 45%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(35 40% 98%) 0%, hsl(35 30% 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(15 70% 50%) 0%, hsl(40 90% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(40 90% 55%) 0%, hsl(30 75% 50%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40 50% 95%) 0%, hsl(35 45% 97%) 100%);
     
     /* Shadows */
     --shadow-soft: 0 2px 8px hsl(25 20% 15% / 0.08);
     --shadow-medium: 0 4px 16px hsl(25 20% 15% / 0.12);
     --shadow-large: 0 8px 32px hsl(25 20% 15% / 0.16);
-    --shadow-glow: 0 0 24px hsl(174 62% 47% / 0.2);
+    --shadow-glow: 0 0 24px hsl(15 70% 50% / 0.25);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -84,25 +84,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --primary: 174 62% 55%;
+    --primary: 15 70% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 174 62% 70%;
-    --primary-dark: 174 62% 40%;
+    --primary-light: 15 70% 70%;
+    --primary-dark: 15 70% 45%;
     
-    --accent: 25 75% 60%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 25 75% 75%;
+    --accent: 40 85% 60%;
+    --accent-foreground: 25 20% 15%;
+    --accent-light: 40 85% 75%;
     
-    --secondary: 30 25% 55%;
+    --secondary: 30 40% 50%;
     --secondary-foreground: 0 0% 100%;
     
-    --background: 25 15% 12%;
+    --background: 25 18% 12%;
     --foreground: 35 25% 95%;
     
-    --card: 25 15% 15%;
+    --card: 25 18% 15%;
     --card-foreground: 35 25% 95%;
     
-    --popover: 25 15% 15%;
+    --popover: 25 18% 15%;
     --popover-foreground: 35 25% 95%;
     
     --muted: 25 15% 20%;
@@ -110,7 +110,7 @@ All colors MUST be HSL.
     
     --border: 25 15% 25%;
     --input: 25 15% 25%;
-    --ring: 174 62% 55%;
+    --ring: 15 70% 55%;
     
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;

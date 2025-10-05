@@ -1,7 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Heart, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { GraduationCap, Heart, Target, Linkedin, Mail, Phone } from "lucide-react";
+import kailashPhoto from "@/assets/team-kailash.jpg";
+import prashantPhoto from "@/assets/team-prashant.jpg";
+import meghaPhoto from "@/assets/team-megha.jpg";
+import bhimPhoto from "@/assets/team-bhim.jpg";
 
 const teamMembers = [
   {
@@ -11,6 +16,10 @@ const teamMembers = [
     description:
       "Kailash is passionate about educational equity and social justice. As a student from a marginalized community himself, he understands firsthand the transformative power of education and opportunities. He leads the strategic vision and partnerships for Project Panash.",
     gradient: "gradient-hero",
+    photo: kailashPhoto,
+    linkedin: "https://linkedin.com/in/kailash-pariyar",
+    email: "kailashpariyar57@gmail.com",
+    phone: "+1 949-204-7365",
   },
   {
     name: "Prashant Panta",
@@ -19,6 +28,10 @@ const teamMembers = [
     description:
       "Prashant brings expertise in program design and community engagement. His commitment to rural education reform drives the operational excellence of the essay competitions. He manages the evaluation process and student outreach.",
     gradient: "gradient-accent",
+    photo: prashantPhoto,
+    linkedin: "https://linkedin.com/in/prashant-panta",
+    email: "prashant@projectpanash.org",
+    phone: "",
   },
   {
     name: "Megha Prasai",
@@ -27,6 +40,10 @@ const teamMembers = [
     description:
       "Megha specializes in educational program development and student mentorship. Her creative approach to fostering critical thinking shapes the essay prompts and feedback system. She coordinates the publication of winning essays.",
     gradient: "bg-secondary",
+    photo: meghaPhoto,
+    linkedin: "https://linkedin.com/in/megha-prasai",
+    email: "megha@projectpanash.org",
+    phone: "",
   },
   {
     name: "Bhim Bahadur Gurung",
@@ -35,6 +52,10 @@ const teamMembers = [
     description:
       "Bhim brings decades of experience in educational development in rural Nepal. His deep understanding of the challenges faced by marginalized communities and his extensive network guide Project Panash's expansion strategy.",
     gradient: "bg-primary-light",
+    photo: bhimPhoto,
+    linkedin: "",
+    email: "",
+    phone: "",
   },
 ];
 
@@ -74,8 +95,13 @@ const Team = () => {
               <Card key={index} className="shadow-medium hover:shadow-large transition-smooth overflow-hidden">
                 <div className={`h-3 ${member.gradient}`} />
                 <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
+                  <div className="flex items-start gap-4 mb-4">
+                    <img 
+                      src={member.photo} 
+                      alt={member.name}
+                      className="w-24 h-24 rounded-full object-cover border-4 border-background shadow-medium"
+                    />
+                    <div className="flex-1">
                       <CardTitle className="font-heading text-2xl mb-2">{member.name}</CardTitle>
                       <div className="flex items-center gap-2 text-primary font-medium mb-2">
                         <Heart className="h-4 w-4" />
@@ -88,10 +114,36 @@ const Team = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <CardDescription className="text-base leading-relaxed">
                     {member.description}
                   </CardDescription>
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
+                    {member.linkedin && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                          <Linkedin className="h-4 w-4 mr-2" />
+                          LinkedIn
+                        </a>
+                      </Button>
+                    )}
+                    {member.email && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={`mailto:${member.email}`}>
+                          <Mail className="h-4 w-4 mr-2" />
+                          Email
+                        </a>
+                      </Button>
+                    )}
+                    {member.phone && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={`tel:${member.phone}`}>
+                          <Phone className="h-4 w-4 mr-2" />
+                          Phone
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}

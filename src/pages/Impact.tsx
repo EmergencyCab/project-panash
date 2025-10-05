@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StatsSection from "@/components/StatsSection";
+import SchoolDialog from "@/components/SchoolDialog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Heart, Users } from "lucide-react";
 import schoolImage from "@/assets/school-building.jpg";
@@ -77,31 +78,33 @@ const Impact = () => {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {schools.map((school, index) => (
-              <Card key={index} className="shadow-medium hover:shadow-large transition-smooth">
-                <CardHeader>
-                  <div className="text-6xl mb-4 text-center">{school.icon}</div>
-                  <CardTitle className="font-heading text-2xl text-center">{school.name}</CardTitle>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4" />
-                    <span>{school.location}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-center">
-                    <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                      <Heart className="h-4 w-4" />
-                      {school.focus}
+              <SchoolDialog key={index} school={school}>
+                <Card className="shadow-medium hover:shadow-large transition-smooth cursor-pointer">
+                  <CardHeader>
+                    <div className="text-6xl mb-4 text-center">{school.icon}</div>
+                    <CardTitle className="font-heading text-2xl text-center">{school.name}</CardTitle>
+                    <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4" />
+                      <span>{school.location}</span>
                     </div>
-                  </div>
-                  <CardDescription className="text-base text-center leading-relaxed">
-                    {school.description}
-                  </CardDescription>
-                  <div className="flex items-center justify-center gap-2 pt-4 border-t border-border">
-                    <Users className="h-5 w-5 text-primary" />
-                    <span className="font-semibold text-foreground">{school.students} Students</span>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="text-center">
+                      <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        <Heart className="h-4 w-4" />
+                        {school.focus}
+                      </div>
+                    </div>
+                    <CardDescription className="text-base text-center leading-relaxed">
+                      {school.description}
+                    </CardDescription>
+                    <div className="flex items-center justify-center gap-2 pt-4 border-t border-border">
+                      <Users className="h-5 w-5 text-primary" />
+                      <span className="font-semibold text-foreground">{school.students} Students</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </SchoolDialog>
             ))}
           </div>
         </div>
